@@ -1,0 +1,58 @@
+Tenemos como problema: Comportamiento de escalera inteligente en un edificio.
+
+Necesitamos que la escalera pueda darnos intrucciones de cada paso que la persona debe realizar para llegar al primer piso.
+
+Para esto, necesitaremos usar algo que nos permita ejecutar una accion repetidamente hasta que se cumpla una condicion especifica.
+
+En esto, vienen los bucles. Tanto el bucle 'For' y el bucle 'While' pueden ser utiles.
+
+En este caso usaremos el bucle for para no complicarnos.
+
+
+
+Para que la escalera pueda darle intrucciones al usuario de como bajar al primer piso, necesitamos que el usuario sea capaz de 
+decirle a la escalera en que piso se encuentra.
+
+Para esto, usamos un 'Input' que reciba un numero entero (int). 
+Recibimos un numero entero en vez de una cadena de texto (string) para que nuestro bucle For pueda contar correctamente.
+
+Ahora necesitamos que nuestro bucle sea capaz de contar cada piso y darnos un mensaje por cada uno de estos.
+
+El bucle For necesita ciertos parametros para funcionar, estos siendo (inicio, final, paso).
+
+Nuestro incio, seria donde se encuentra el usuario.
+Nuestro final, seria el piso 1, donde el usuario debe llegar.
+
+Normalmente los bucles For cuentan de forma ascendente ("1, 2, 3, 4...").
+Pero para nuestra escalera, necesitamos que esto sea al revés, ya que queremos bajar de pisos ("Piso 5, Piso 4, Piso 3...")
+
+Para eso, usamos un paso (-1). Esto hace que el bucle for cuente de manera regresiva.
+
+Por ejemplo, tenemos un bucle For con (Inicio=10, Final=0, Paso=-1)
+
+Esto, haria que el bucle cuente de esta manera:
+
+"10, 9, 8... 3, 2, 1"
+
+Los bucles for se detienen sin tocar el mismo numero que el final, por eso termina en 1 y no en 0.
+
+Ahora, para mostrar las intrucciones de cada paso que debe dar el usuario, usamos condicionales (If, Elif, Else).
+Esto nos sirve para que nuestro codigo se ejecute si se cumple una condicion, y si no, se ejecute otra cosa.
+
+Para nuestra escalera, necesitaremos una condicion que muestre los pasos si aún no se esta en el primer piso.
+
+Para esto, verificamos que nuestro "i" (puede ser reemplazado por cualquier cosa, es una variable temporal del bucle For que determina qué se va a contar) sea diferente de 1.
+Si es diferente de 1, le decimos al usuario que debe bajar por el piso que sigue.
+
+Así hasta que llegamos al 1 y se deja de cumplir la condicion. Cuando esto pasa, le decimos al usuario que ya llegaria al primer piso si sigue esos pasos.
+
+
+
+Teniendo en cuenta todo esto, ya podemos determinar la respuesta a una serie de preguntas.
+
+1. ¿Como sabe la escalera cuando detenerse?
+--: Sencillo, una vez que el conteo llega a 0 (Piso 1) el bucle se detiene y la escalera deja de dar mas intrucciones.
+2. ¿Como logra repetir el proceso sin equivocarse?
+--: Porque le definimos el inicio y final del conteo; y le dijimos como tenia que contar. De esta manera, la escalera no puede confundirse.
+3. ¿Por que no necesita "saber todo desde el inicio"?
+--: No podemos definir que la escalera cuente siempre desde el piso 5, ya que no todos los usuarios vienen desde el piso 5; algunos desde el 10mo, otros en el 3ro. Por lo tanto es mejor pedirle al usuario que ingrese su piso.
